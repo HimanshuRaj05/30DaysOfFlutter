@@ -57,32 +57,36 @@ class _LoginPageState extends State<LoginPage> {
                   height: 40.0,
                 ),
 
-                InkWell(
-                  onTap: () {
-                    setState(() {
-                      changeButton = true;
-                    });
-                  },
-                  child: AnimatedContainer(
-                    duration: Duration(seconds: 1),
-                    width: changeButton ? 50 : 150,
-                    height: 50,
-                    alignment: Alignment.center,
-                    child: changeButton
-                        ? Icon(Icons.done)
-                        : Text(
-                            "Login",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18),
-                          ),
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurple,
+                Material(
+                  color: Colors.deepPurple,
+                  borderRadius: BorderRadius.circular(changeButton ? 50 : 8),
+                  child: InkWell(
+                    splashColor: Colors.red,
+                    onTap: () async {
+                      setState(() {
+                        changeButton = true;
+                      });
 
-                      // changeButton ? BoxShape.circle : BoxShape.rectangle,
-                      borderRadius:
-                          BorderRadius.circular(changeButton ? 50 : 8),
+                      await Future.delayed(Duration(seconds: 1));
+                      await Navigator.pushNamed(context, MyRoutes.homeRoute);
+                      setState(() {
+                        changeButton = false;
+                      });
+                    },
+                    child: AnimatedContainer(
+                      duration: Duration(seconds: 1),
+                      width: changeButton ? 50 : 150,
+                      height: 50,
+                      alignment: Alignment.center,
+                      child: changeButton
+                          ? Icon(Icons.done)
+                          : Text(
+                              "Login",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18),
+                            ),
                     ),
                   ),
                 ),
