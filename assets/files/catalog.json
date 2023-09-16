@@ -1,0 +1,26 @@
+{
+    "products":[
+        {
+            "id":1,
+            "name":"iPhone 12 Pro",
+            "desc":"Apple iPhone 12th generation",
+            "price":999,
+            "color":"#33505a",
+            "image":"https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MHL93?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1601149168000"
+
+        },
+
+        {
+            "id":2,
+            "name":"Pixel 5",
+            "desc":"Google pixel phone 5th generation",
+            "price":699,
+            "color":"#00ac51",
+            "image":"https://www.91-img.com/pictures/137669-v3-google-pixel-5-mobile-phone-large-1.jpg"
+
+        }
+
+
+        
+    ]
+}
